@@ -1,0 +1,33 @@
+.message {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+
+  width: 480px;
+  max-width: 90%;
+
+  background-color: var(--bg-medium);
+
+  padding: var(--small-size-fluid);
+
+  color: var(--text-grey);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: var(--extra-small-size-fluid);
+}

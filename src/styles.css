@@ -1,1 +1,104 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url("https://api.fonts.coollabs.io/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap");
+
+:root {
+  /* Dark Mode Colors */
+  --text: #f0f1f2;
+  --bg-dark: #11121d;
+  --bg-medium: #191a28;
+  --bg-lighter: #1e2130;
+  --text-grey: #c4c4c4;
+  --accent: #cb15bc;
+
+  --extra-small-size-fluid: clamp(0.5rem, 1vw, 0.75rem);
+  --small-size-fluid: clamp(1rem, 2vw, 1.5rem);
+  --medium-size-fluid: clamp(1.8rem, 4vw, 2.5rem);
+  --large-size-fluid: clamp(2.5rem, 6vw, 4.5rem);
+  --extra-large-size-fluid: clamp(8rem, 10vw + 1rem, 10rem);
+
+  --border-radius: 8px;
+
+  --box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Main Components */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 0.75rem;
+
+  background-color: var(--bg-dark);
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+
+  background-color: var(--bg-lighter);
+
+  border: 2px solid var(--bg-dark);
+}
+
+body {
+  font-family: "Inter";
+  color: var(--text);
+
+  background-color: var(--bg-dark);
+}
+
+.content {
+  display: grid;
+  place-items: center;
+  margin-block: var(--small-size-fluid);
+  padding-inline: var(--medium-size-fluid);
+
+  height: 100%;
+}
+
+/* Disable all animations for people that prefer without it */
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 50ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 50ms !important;
+    scroll-behavior: auto !important;
+  }
+}

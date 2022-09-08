@@ -1,0 +1,24 @@
+<h2>Moments</h2>
+
+<div class="search">
+  <form>
+    <fa-icon [icon]="faSearch"></fa-icon>
+    <input type="text" placeholder="Search a moment" (input)="search($event)" />
+  </form>
+</div>
+
+<div class="moments" *ngIf="filteredMoments.length; else empty">
+  <div *ngFor="let moment of filteredMoments" class="moment">
+    <img
+      src="{{ baseAPIUrl }}uploads/{{ moment.image }}"
+      alt="{{ moment.title }}"
+    />
+    <h2>{{ moment.title }}</h2>
+    <p>{{ moment.created_at }}</p>
+    <a routerLink="moments/{{ moment.id }}">read more</a>
+  </div>
+</div>
+
+<ng-template #empty>
+  <h1>No Moments found!</h1>
+</ng-template>
