@@ -11,6 +11,10 @@ export class MomentFormComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<Moment>();
   @Input() btnText!: string;
 
+  submitted: boolean = false;
+
+  @Input() momentData?: Moment;
+
   momentForm!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
@@ -24,19 +28,17 @@ export class MomentFormComponent implements OnInit {
     //   image: new FormControl(''),
     // });
     this.momentForm = this.fb.group({
-      id: [''],
-      title: ['', Validators.required],
-      description: ['', Validators.required],
-      image: [''],
+      id: [this.momentData ? this.momentData.id : ''],
+      title: [
+        this.momentData ? this.momentData.title : '',
+        Validators.required,
+      ],
+      description: [
+        this.momentData ? this.momentData.description : '',
+        Validators.required,
+      ],
+      image: [this.momentData ? this.momentData.image : ''],
     });
-  }
-
-  get title() {
-    return this.momentForm.get('title')!;
-  }
-
-  get description() {
-    return this.momentForm.get('description')!;
   }
 
   onUploadFile(e: any) {
@@ -47,6 +49,7 @@ export class MomentFormComponent implements OnInit {
   }
 
   submitForm() {
+    this.submitted = true;
     if (this.momentForm.invalid) return;
 
     console.log(this.momentForm.value);

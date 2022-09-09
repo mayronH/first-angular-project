@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  moments!: Array<Moment>;
+  moments: Array<Moment> = [];
   filteredMoments: Array<Moment> = [];
 
   baseAPIUrl = environment.baseAPIUrl;
@@ -32,8 +32,8 @@ export class HomeComponent implements OnInit {
         );
       });
 
-      this.moments = data;
-      this.filteredMoments = data;
+      this.moments = items.data;
+      this.filteredMoments = items.data;
     });
   }
 

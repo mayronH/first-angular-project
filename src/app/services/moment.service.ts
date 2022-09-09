@@ -22,4 +22,16 @@ export class MomentService {
   getAllMoments(): Observable<Response<Moment[]>> {
     return this.http.get<Response<Moment[]>>(this.apiURL);
   }
+
+  getMoment(id: number): Observable<Response<Moment>> {
+    return this.http.get<Response<Moment>>(`${this.apiURL}/${id}`);
+  }
+
+  removeMoment(id: number) {
+    return this.http.delete(`${this.apiURL}/${id}`);
+  }
+
+  updateMoment(formData: FormData, id: number): Observable<FormData> {
+    return this.http.put<FormData>(`${this.apiURL}/${id}`, formData);
+  }
 }

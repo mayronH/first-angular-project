@@ -1,10 +1,11 @@
 <form (ngSubmit)="submitForm()" [formGroup]="momentForm">
+  <input type="hidden" formControlName="id" />
   <div class="form-input">
     <label for="title">Title</label>
     <input type="text" id="title" formControlName="title" required />
 
-    <div *ngIf="title.invalid" class="error">
-      <p *ngIf="title.errors?.['required']">Please provide a title!</p>
+    <div *ngIf="momentForm.get('title')?.invalid && submitted" class="error">
+      <p>Please provide a title!</p>
     </div>
   </div>
 
@@ -16,7 +17,10 @@
       required
     ></textarea>
 
-    <div *ngIf="description.invalid" class="error">
+    <div
+      *ngIf="momentForm.get('description')?.invalid && submitted"
+      class="error"
+    >
       <p>Please provide a description!</p>
     </div>
   </div>
