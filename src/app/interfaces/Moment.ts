@@ -1,3 +1,5 @@
+import { Comment } from './Comment';
+
 export interface Moment {
   id?: number;
   title: string;
