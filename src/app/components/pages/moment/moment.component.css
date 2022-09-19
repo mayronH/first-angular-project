@@ -1,0 +1,58 @@
+h1 {
+  text-align: center;
+}
+
+img {
+  margin-block: var(--small-size-fluid);
+}
+
+.comments,
+.actions,
+.comment-form {
+  margin-block: var(--medium-size-fluid);
+}
+
+.comments h3,
+.actions h3 {
+  margin-bottom: var(--small-size-fluid);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: var(--small-size-fluid);
+}
+
+.btn {
+  border-radius: var(--border-radius);
+  border: none;
+
+  padding: var(--extra-small-size-fluid) var(--small-size-fluid);
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: lowercase;
+  color: var(--text);
+}
+
+.btn-edit {
+  background-color: var(--accent);
+}
+
+.btn-remove {
+  background-color: var(--bg-lighter);
+}
+
+.comment {
+  background-color: var(--bg-medium);
+
+  padding: var(--extra-small-size-fluid);
+}
+
+.comment p:last-child {
+  padding-top: var(--small-size-fluid);
+
+  color: var(--text-grey);
+}
