@@ -1,10 +1,10 @@
 # Moments
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+Projeto Moments do curso introdutório de [Angular](https://www.youtube.com/playlist?list=PLnDvRpP8Bnex2GQEN0768_AxZg_RaIGmw)
 
 ## Backend
 
-API from https://github.com/matheusbattisti/curso_adonis_api_yt
+API: https://github.com/matheusbattisti/curso_adonis_api_yt
 
 ## Development server
 
