@@ -24,7 +24,7 @@
   <div class="comments">
     <h3>Comments</h3>
 
-    <div class="comment" *ngIf="moment.comments!.length > 0; else noComment">
+    <div *ngIf="moment.comments!.length > 0; else noComment">
       <div *ngFor="let comment of moment.comments" class="comment">
         <p>{{ comment.text }}</p>
         <p>by: {{ comment.username }}</p>

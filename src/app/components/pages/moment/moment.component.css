@@ -48,7 +48,8 @@ img {
 .comment {
   background-color: var(--bg-medium);
 
-  padding: var(--extra-small-size-fluid);
+  padding: var(--small-size-fluid);
+  margin-block: var(--extra-small-size-fluid);
 }
 
 .comment p:last-child {
