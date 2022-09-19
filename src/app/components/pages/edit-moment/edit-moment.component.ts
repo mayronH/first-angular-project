@@ -39,10 +39,10 @@ export class EditMomentComponent implements OnInit {
       formData.append('image', momentData.image);
     }
 
-    await this.momentService.updateMoment(formData, id!).subscribe();
+    this.momentService.updateMoment(formData, id!).subscribe();
 
     this.messagesService.add('Moment Updated Successfully');
 
-    this.router.navigate(['/']);
+    this.router.navigate(['/moments', id]);
   }
 }

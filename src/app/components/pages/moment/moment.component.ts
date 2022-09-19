@@ -52,7 +52,7 @@ export class MomentComponent implements OnInit {
 
   async removeMoment() {
     if (this.moment) {
-      await this.momentService.removeMoment(this.moment.id!).subscribe();
+      this.momentService.removeMoment(this.moment.id!).subscribe();
 
       this.messagesService.add('Moment Deleted Successfully');
 
@@ -69,7 +69,7 @@ export class MomentComponent implements OnInit {
 
     data.momentId = Number(this.moment!.id);
 
-    await this.commentService.addComment(data).subscribe((comment) => {
+    this.commentService.addComment(data).subscribe((comment) => {
       this.moment!.comments!.push(comment.data);
     });
 
